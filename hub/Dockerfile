@@ -3,7 +3,7 @@ FROM golang:latest
 RUN go get github.com/sqdron/squad-hub
 #
 ## Copy the local package files to the container’s workspace.
-#ADD . /go/src/github.com/shijuvar/golang-docker
+COPY ../config.json /go/src/github.com/sqdron/squad-hub
 
 RUN go install github.com/sqdron/squad-hub
 
