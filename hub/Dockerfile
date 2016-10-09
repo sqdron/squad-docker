@@ -1,10 +1,10 @@
 FROM golang:latest
 
-
-## Copy the local package files to the container’s workspace.
-COPY config.json $GOPATH/src/github.com/sqdron/squad-hub
+RUN go get github.com/sqdron/squad-hub
 
 RUN go install github.com/sqdron/squad-hub
+
+ADD config.json /go/bin
 
 # Run the golang-docker command when the container starts.
 ENTRYPOINT /go/bin/squad-hub
