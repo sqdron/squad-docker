@@ -6,6 +6,7 @@ ADD config.json github.com/sqdron/squad-gateway/config.json
 RUN go install github.com/sqdron/squad-gateway
 
 ADD config.json /go/config.json
+ADD gateway.json /go/gateway.json
 
 # Run the golang-docker command when the container starts.
 ENTRYPOINT /go/bin/squad-gateway
