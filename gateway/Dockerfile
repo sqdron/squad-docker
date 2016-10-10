@@ -1,7 +1,6 @@
 FROM golang:latest
 
 RUN go get github.com/sqdron/squad-gateway
-ADD config.json github.com/sqdron/squad-gateway/config.json
 
 RUN go install github.com/sqdron/squad-gateway
 
