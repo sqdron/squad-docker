@@ -4,8 +4,6 @@ RUN go get github.com/sqdron/squad-hub
 
 RUN go install github.com/sqdron/squad-hub
 
-ADD connect.json /go/connect.json
-
 # Run the golang-docker command when the container starts.
 ENTRYPOINT /go/bin/squad-hub
 
