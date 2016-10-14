@@ -1,13 +1,12 @@
 FROM golang:latest
 
-RUN go get github.com/sqdron/squad-auth-provider
+RUN go get github.com/sqdron/squad-oauth
 
-RUN go install github.com/sqdron/squad-auth-provider
-
-ADD connect.json /go/connect.json
-ADD app.json /go/app.json
+RUN go install github.com/sqdron/squad-oauth
 
 # Run the golang-docker command when the container starts.
-ENTRYPOINT /go/bin/squad-auth-provider
+WORKDIR /go/bin/
 
-EXPOSE 8080
+ENTRYPOINT ./squad-oauth
+
+EXPOSE 5002
